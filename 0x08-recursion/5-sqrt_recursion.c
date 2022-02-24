@@ -3,13 +3,12 @@
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number
- * Return: (0)
+ * Return: square root of n
 */
 int _sqrt_recursion(int n)
 {
-	return (math(n, 0));
+	return (math(0, n));
 }
-
 
 /**
  * math - calculates square root natural number
@@ -22,7 +21,7 @@ int math(int n, int x)
 	if (x * x == n)
 		return (x);
 
-	else if (x * x < n)
+	else if (x * x > n)
 		return (-1);
 
 	else
