@@ -3,26 +3,29 @@
 #include <stdlib.h>
 
 /**
- * main - multiply 2 numbers
+ * main - adds positive numbers
  * @argc: counter for arguments
  * @argv: array of strings of arguments
- * Return: 0 is mul, 1 is error.
+ * Return: 0 is ok, 1 is error.
 */
 int main(int argc, char *argv[])
 {
-	int n;
+	int i, j, sum = 0;
 
-	if (argc < 2)
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (!(argv[i][j] >= '0' &&  argv[i][j] <= '9'))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+
+	sum += atoi(argv[j]);
 	}
 
-	else
-	{
-		n = atoi(argv[1]) * atoi(argv[2]);
-		printf("%d\n", n);
-	}
-
+	printf("%d\n", sum);
 	return (0);
 }
