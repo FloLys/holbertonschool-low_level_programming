@@ -3,10 +3,9 @@
 #include <stdlib.h>
 
 /**
- * _strdup - 
- * @size: amount of memory to be filled with c
- * @c: chars to assign
- * Return: pointer if success, null if it fails or if 0
+ * _strdup - Copies a string into a new allocated space in memory
+ * @str: string to duplicate
+ * Return: pointer if success, null if it fail
 */
 char *_strdup(char *str)
 {
