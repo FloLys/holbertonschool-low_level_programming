@@ -3,15 +3,17 @@
 #include <stdlib.h>
 
 /**
- * create_array - creates an array of chars and initialize it with other char
- * @size: amount of memory to be filled with c
- * @c: chars to assign
- * Return: pointer if success, null if it fails or if 0
+ * malloc_checked - allocates memory of b in a, returns pointer
+ * if null, normal process termination, exit with status 98
+ * @b: memory to copy
+ * Return: pointer
 */
 void *malloc_checked(unsigned int b)
 {
-	void *i = malloc(b);
+	void *a = malloc(b);
 
-	if (i == NULL)
+	if (a == NULL)
 		exit(98);
+	
+	return(a);
 }
