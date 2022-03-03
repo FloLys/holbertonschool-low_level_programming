@@ -1,4 +1,4 @@
-#include "main.h"
+i#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,7 +22,7 @@ int *array_range(int min, int max)
 		return (NULL);
 
 	for (i = 0; i + min <= max; i++)
-		a[i] = 1 + min;
+		a[i] = i + min;
 
 	return (a);
 }
