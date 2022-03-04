@@ -21,10 +21,10 @@ char *str_concat(char *s1, char *s2)
 
 	do {
 		i++;
-	} while (s1[i - 1]);
+	} while (s1[i]);
 	do {
 		j++;
-	} while (s2[j - 1]);
+	} while (s2[j]);
 
 	str = malloc(sizeof(char) * (i + j + 1));
 
