@@ -21,12 +21,14 @@ int main(void)
 				putchar(n2 + 48);
 				putchar(n3 + 48);
 
-				if (n3 == 9 && n2 == n3 - 1 && n1 == n3 - 2)
+				if (n3 == 9 && n2 == 8 && n1 == 7)
 					putchar('\n');
 
 				else
+				{
 					putchar(',');
 					putchar(' ');
+				}
 			}
 		}
 	}
