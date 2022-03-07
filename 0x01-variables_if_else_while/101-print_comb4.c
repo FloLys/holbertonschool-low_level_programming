@@ -20,8 +20,13 @@ int main(void)
 				putchar(n1 + 48);
 				putchar(n2 + 48);
 				putchar(n3 + 48);
-				putchar(',');
-				putchar(' ');
+
+				if (n3 == 9 && n2 == n3 - 1 && n1 == n3 - 2)
+					putchar('\n');
+
+				else
+					putchar(',');
+					putchar(' ');
 			}
 		}
 	}
