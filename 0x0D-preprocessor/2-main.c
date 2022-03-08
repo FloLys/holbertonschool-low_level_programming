@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * int - main
- *
+ * main - print name of its own file
+ * Return: 0
 */
 int main(void)
 {
