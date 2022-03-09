@@ -4,10 +4,17 @@
 /**
 * array_iterator - executes a fctn given as a parameter on each element
 * of an array
-* @array: 
-* @size: 
+* @array: array of given elements
+* @size: size of the array
+* @action: pointer to the used function
 */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	f(name);
+	size_t i;
+
+	if (size == NULL)
+		return;
+
+	for (i = 0; i < size; i++)
+		(*action)(array[i]);
 }
