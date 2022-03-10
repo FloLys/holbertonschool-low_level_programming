@@ -3,8 +3,6 @@
 /**
 * get_op_func - executes function
 * @s: operator
-* @int: num
-* @int: num
 * Return: op
 */
 int (*get_op_func(char *s))(int, int)
