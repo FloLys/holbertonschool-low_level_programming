@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 	*(array of structures)
 	*i is the iterator of the chars in the input string format
 	*/
-	while (format != NULL && format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
 		while (array[j].selector != NULL)
