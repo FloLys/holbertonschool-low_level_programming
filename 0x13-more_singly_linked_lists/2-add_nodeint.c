@@ -1,20 +1,19 @@
 #include "lists.h"
 
 /**
-* add_note - adds new node at the beginning of a list_t list
+* add_nodeint - adds new node at the beginning of a list_t list
 * @head: header with the list
-* @str: string
+* @n: integers
 * Return: address of new element or null if fails
 */
-list_t *add_node(list_t **head, const char *str)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	list_t *new_node = malloc(sizeof(list_t));
+	listint_t *new_node = malloc(sizeof(listint_t));
 
 	if (new_node == NULL)
 		return (NULL);
 
-	(*new_node).str = strdup(str);
-	(*new_node).len = strlen(str);
+	(*new_node).n = n;
 	(*new_node).next = *head;
 	*head = new_node;
 
