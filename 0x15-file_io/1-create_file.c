@@ -8,8 +8,7 @@
 */
 int create_file(const char *filename, char *text_content)
 {
-	int i, fd = open(filename, O_CREAT, 600 | O_RDWR);
-	/*char *buffer = malloc(sizeof(char) * text_content);*/
+	int i, wr, fd = open(filename, O_CREAT, 600 | O_TRUNC | O_RDWR);
 
 	if (!filename || *filename == '\0')
 		return (-1);
@@ -17,15 +16,13 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	if (text_content == NULL)
+	for (i = 0; text_content[i] != '\0'; i++)
+
+	wr = write(fd, text_content, i);
+	if (wr == -1)
 		return (-1);
 
-	for (i = 0; *text_content <= '\0'; i++)
-
-	write(fd, text_content, i);
-
 	close(fd);
-	/*free(buffer);*/
 
 	return (1);
 }
