@@ -8,7 +8,8 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int counter, fd = open(filename, O_RDWR);
+	ssize_t counter;
+	int fd = open(filename, O_RDONLY);
 	char *buffer = malloc(sizeof(char) * letters);
 
 	if (!filename || *filename == '\0')
