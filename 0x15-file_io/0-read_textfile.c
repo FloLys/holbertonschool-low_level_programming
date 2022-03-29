@@ -8,8 +8,8 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int counter, fd = open(filename, O_RDONLY);
-	char *buffer = malloc(sizeof(char) * letters + 1);
+	int counter, fd = open(filename, O_RDWR);
+	char *buffer = malloc(sizeof(char) * letters);
 
 	if (!filename || *filename == '\0')
 		return (0);
@@ -20,10 +20,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	read(fd, buffer, letters);
-	buffer[letters] = '\0';
-	counter = write(STDOUT_FILENO, buffer, letters);
+	counter = read(fd, buffer, letters);
+	if (counter == -1)
+		return (0);
+
+	counter = write(STDOUT_FILENO, buffer, counter);
+	if (counter == -1)
+		return (0);
+
 	close(fd);
+	free(buffer);
 
 	return (counter);
 }
