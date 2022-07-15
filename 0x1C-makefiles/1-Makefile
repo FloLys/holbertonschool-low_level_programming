@@ -1,5 +1,6 @@
 CC = gcc
-SRC = $(wildcard *.c)
+# SRC = $(wildcard *.c) form of writing
+SRC = main.c school.c # for checker
 
 all :
 	$(CC) $(SRC) -o school
